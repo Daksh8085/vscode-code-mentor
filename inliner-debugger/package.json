@@ -1,0 +1,157 @@
+{
+  "name": "inliner-debugger",
+  "displayName": "inliner-debugger",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "inline",
+    "diagnostic",
+    "highlight",
+    "decorations",
+    "debugger",
+    "multi-root ready"
+  ],
+  "icon": "images/icon.png",
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "inliner-debugger.enable",
+        "title": "Enable Inliner Debugger",
+        "category": "Inliner Debugger"
+      },
+      {
+        "command": "inliner-debugger.disable",
+        "title": "Disable Inliner Debugger",
+        "category": "Inliner Debugger"
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "inliner-debugger.errorColor": {
+          "type": "string",
+          "default": "rgba(240,10,0,0.5)",
+          "description": "Background color for lines with errors."
+        },
+        "inliner-debugger.errorTextColor": {
+          "type": "string",
+          "default": "rgba(240,240,240,1.0)",
+          "description": "Text color for lines with errors."
+        },
+        "inliner-debugger.warningColor": {
+          "type": "string",
+          "default": "rgba(200,100,0,0.5)",
+          "description": "Background color for lines with warnings."
+        },
+        "inliner-debugger.warningTextColor": {
+          "type": "string",
+          "default": "rgba(240,240,240,1.0)",
+          "description": "Text color for lines with warnings."
+        },
+        "inliner-debugger.infoColor": {
+          "type": "string",
+          "default": "rgba(40,20,120,0.5)",
+          "description": "Background color for lines with info."
+        },
+        "inliner-debugger.infoTextColor": {
+          "type": "string",
+          "default": "rgba(240,240,240,1.0)",
+          "description": "Text color for lines with info."
+        },
+        "inliner-debugger.hintColor": {
+          "type": "string",
+          "default": "rgba(20,120,40,0.5)",
+          "description": "Background color for lines with hints."
+        },
+        "inliner-debugger.hintTextColor": {
+          "type": "string",
+          "default": "rgba(240,240,240,1.0)",
+          "description": "Text color for lines with hints."
+        },
+        "inliner-debugger.fontStyle": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "italic"
+          ],
+          "default": "italic",
+          "description": "Font style for annotation text."
+        },
+        "inliner-debugger.fontWeight": {
+          "type": "string",
+          "enum": [
+            "100",
+            "200",
+            "300",
+            "normal",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+          ],
+          "default": "normal",
+          "description": "Font weight for annotation text."
+        },
+        "inliner-debugger.fontMargin": {
+          "type": "string",
+          "default": "40px",
+          "description": "Margin between end of line and annotation."
+        },
+        "inliner-debugger.enabledDiagnosticLevels": {
+          "type": "array",
+          "description": "Diagnostic levels to highlight. Valid: 'error', 'warning', 'info', 'hint'.",
+          "default": [
+            "error",
+            "warning",
+            "info",
+            "hint"
+          ]
+        },
+        "inliner-debugger.statusBarControl": {
+          "type": "string",
+          "enum": [
+            "always",
+            "never",
+            "hide-when-no-issues"
+          ],
+          "default": "hide-when-no-issues",
+          "description": "Visibility control for status bar diagnostics."
+        },
+        "inliner-debugger.addAnnotationTextPrefixes": {
+          "type": "boolean",
+          "default": true,
+          "description": "Prefix annotations with diagnostic severity (e.g. 'Error:', 'Warning:')."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.99.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}

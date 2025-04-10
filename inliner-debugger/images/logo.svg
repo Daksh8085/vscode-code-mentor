@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4B6CB7" />
+      <stop offset="100%" stop-color="#182848" />
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="12" ry="12" fill="url(#grad1)" />
+  
+  <!-- Code brackets -->
+  <path d="M40 38 L25 64 L40 90" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M88 38 L103 64 L88 90" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Forward slash representing code -->
+  <path d="M70 38 L58 90" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Lightbulb for hints -->
+  <circle cx="64" cy="24" r="8" fill="#FFEB3B" />
+  <path d="M64 32 L64 36" stroke="#FFEB3B" stroke-width="4" stroke-linecap="round" />
+  
+  <!-- Checkmark for test success -->
+  <path d="M52 104 L60 112 L76 96" stroke="#4CAF50" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
